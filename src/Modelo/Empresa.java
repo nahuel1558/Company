@@ -1,25 +1,16 @@
 package Modelo;
 
 import Interfaz.IEmpleado;
-import java.util.ArrayList;
 import java.util.List;
 
-public class Empresa {
-
-    private List<IEmpleado> empleados;
-
+public abstract class Empresa {
     public Empresa() {
-        empleados = new ArrayList<>();
+
     }
 
-    public void crearSoftware() {
-        empleados.add(new Diseñador());
-        empleados.add(new Programador());
-        empleados.add(new Tester());
+    public abstract List<IEmpleado> getEmpleados();
 
-        for (IEmpleado e : empleados) {
-            e.trabajar();
-        }
-    }
-
+    public abstract void crearSoftware();
+    
+    public abstract void acomodarEmpleado(IEmpleado empleado);
 }
